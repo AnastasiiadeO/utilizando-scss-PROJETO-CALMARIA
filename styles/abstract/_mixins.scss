@@ -1,0 +1,10 @@
+@mixin margem-central($width) {
+    margin: 0 auto;
+    width: $width;
+} //'funcao' que pode ser usada em varios ligares do css
+
+@mixin ff-fs-cl($f-famaly, $f-size, $f-color) {
+    font-family: $f-famaly;
+    font-size: $f-size;
+    color: $f-color;
+}

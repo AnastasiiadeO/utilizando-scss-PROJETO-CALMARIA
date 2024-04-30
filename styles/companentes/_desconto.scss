@@ -1,0 +1,48 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+#desconto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    h4{
+        @include mixins.ff-fs-cl(variaveis.$ft-titulos, 1.6rem, variaveis.$cor-primaria);
+    }
+    p{
+        @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.2rem, variaveis.$cor-primaria);    
+    }
+    .input-btn {
+        $largura-input: 790px; //esta variavel vai funcionar apenas dentro desse escopo
+        width: $largura-input;
+        height: 65px;
+        border: 1px solid variaveis.$cor-default;
+        border-radius: 65px;
+        margin: 0 auto;
+        display: inline-flex;
+        transition: .3s;
+        &:hover {
+            border-color: variaveis.$cor-secundaria;
+        }
+        input {
+            @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.2rem, variaveis.$cor-primaria);    
+            width: calc($largura-input * 0.65); //calculando largura 
+            border: none;
+            outline: none;
+            margin-left: 2rem;
+        }
+        button {
+            @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.2rem, white);    
+            width: calc($largura-input * 0.35);
+            background: variaveis.$cor-default;
+            border-radius: 0 65px 65px 0;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                background: variaveis.$cor-secundaria;
+            }
+        }
+    }
+
+}

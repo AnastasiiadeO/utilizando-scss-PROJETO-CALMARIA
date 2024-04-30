@@ -1,0 +1,84 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+
+
+header {
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha {
+            border-top: 1px solid black;
+            width: 90%;
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+             
+            li {
+                list-style-type: none;
+                
+            }
+            a {
+                text-decoration: none;
+                @include mixins.ff-fs-cl(variaveis.$ft-textos, 22px, variaveis.$cor-primaria);
+                font-weight: 500;
+                &:hover {
+                    color: #000000;
+                    font-weight: 700;
+                }
+            }
+            
+            
+        }
+    }
+
+    #home {
+        max-width: 1040px;
+        @include mixins.margem-central(80%);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .textos-home {
+            max-width: 464px;
+            h1 {
+                @include mixins.ff-fs-cl(variaveis.$ft-titulos, 42px,  variaveis.$cor-primaria);
+                margin-bottom:  2rem;
+                span {
+                    color: variaveis.$cor-secundaria;
+                }                
+            }
+            .btn-main {
+                max-width: 280px;
+                width: 100%;
+                padding: 24px;
+                background-color: variaveis.$cor-secundaria;
+                @include mixins.ff-fs-cl(variaveis.$ft-textos, 22px, #FFFFFF);
+                font-weight: 600;
+                border-radius: 42px;
+                border: none;
+                opacity: 0.6;
+                transition: opacity 0.5s;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1.0;
+                }
+            }
+        }
+
+        .img-home {
+           max-width: 474px;
+           img {
+            width: 100%;
+         }
+        }                
+    }
+}
